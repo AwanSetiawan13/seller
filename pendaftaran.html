@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BISA MEDIA.MCN</title>
+  <link rel="icon" type="image/png" href="images/Logo_Bisa.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      width: 50vw;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 50px;
+    }
+
+    .topbar {
+      background-color: #004aad;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 25px;
+    }
+
+    .topbar img {
+      height: 35px;
+    }
+
+    .topbar h4 {
+      font-weight: 600;
+    }
+
+    .aduh {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 40px;
+    }
+
+    .aduh img {
+      width: 100%;
+      max-width: 1080px;
+      border-radius: 14px;
+      border: 2px solid #004aad;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 25px;
+    }
+
+    .contact {
+      display: flex;
+      justify-content: center;
+      margin: 50px auto;
+      width: 80%;
+      max-width: 900px;
+    }
+
+    .contact-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form label {
+      font-weight: 600;
+      color: #004aad;
+    }
+
+    .contact-form input,
+    .contact-form select {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    .contact-form button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .contact-form button:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #004aad;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+
+    /* LAYANAN */
+    .layanan {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .layanan-box {
+      flex: 1;
+      min-width: 30%;
+      border: 1.5px solid #004aad;
+      border-radius: 10px;
+      text-align: center;
+      padding: 15px;
+      background: #fff;
+    }
+
+    .layanan-box h4 {
+      margin: 10px 0;
+      color: #004aad;
+      font-size: 18px; /* Judul paket tetap besar */
+    font-weight: 700;
+    }
+
+    .layanan-box p {
+    font-size: 13px; /* Poin lebih kecil */
+    margin: 2px 0;
+    text-align: left;
+  }
+
+    /* 🔹 Popup konfirmasi */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: left;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      animation: fadeInUp 0.4s ease;
+    }
+
+    .popup-content h3 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .popup-data {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+      background: #f9f9f9;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .popup-content button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      margin: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .popup-content .yes {
+      background: #25D366;
+      color: white;
+    }
+
+    .popup-content .no {
+      background: #ccc;
+    }
+
+    .success-page {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .success-page h2 {
+      color: #004aad;
+      margin-bottom: 15px;
+    }
+
+    .success-page p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .success-page button {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      margin-top: 25px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 100vw;
+      }
+    .layanan {
+    flex-direction: column; /* membuat paket stack 1 per 1 */
+  }
+
+  .layanan-box {
+    min-width: 100%; /* biar tiap box full width */
+  }
+  
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="formPage">
+    <div class="topbar">
+      <div class="left">
+        <img src="images/Logoyaa.png" alt="Logo">
+        <h4>BISA MEDIA.MCN</h4>
+      </div>
+    </div>
+
+    <section class="aduh">
+      <img src="images/Bagian1.jpg" alt="Sampul">
+    </section>
+
+    <section>
+      <h2 class="section-title">Form Pendaftaran</h2>
+      <div class="contact">
+        <div class="contact-form">
+          <label for="pic">Nama PIC</label>
+          <input type="text" id="pic" placeholder="Masukkan nama PIC">
+
+          <label for="contact">Contact</label>
+          <input type="text" id="contact" placeholder="081234567890">
+
+          <label for="alamat">Alamat</label>
+          <textarea id="alamat" placeholder="Masukkan alamat" rows="3"
+            style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:15px;"></textarea>
+
+          <label for="brand">Nama Brand</label>
+          <input type="text" id="brand" placeholder="Nama brand">
+
+          <label for="kategori">Kategori Produk</label>
+          <input type="text" id="kategori" placeholder="Kategori produk">
+
+          <label for="logo">Upload Logo</label>
+          <input type="file" id="logo" accept="image/*">
+
+          <!-- LAYANAN -->
+          <section>
+            <h2 class="section-title">Package</h2>
+            <div class="layanan">
+              <div class="layanan-box">
+                <h4>Reguler</h4>
+                <h4>Rp.500.000</h4>
+                <p>1. 2 produk showcase (etalase di area booth umum)</p>
+                <p>2. Ditampilkan di konten kreator melalui link TAP</p>
+                <p>3. Logo brand di backdrop event</p>
+                <p>4. Produk dipajang di booth display profesional</p>
+                <p>5. 1 posting eksklusif di akun TikTok @bisamedia.mcn</p>
+                <p>6. Publikasi apresiasi sponsor</p>
+                <p>7. MC mention selama event</p>
+                <p>8. Free lunch untuk 1 orang</p>
+              </div>
+              <div class="layanan-box">
+                <h4>VIP</h4>
+                <h4>Rp.1.500.000</h4>
+                <p>1. Booth eksklusif brand (meja & backdrop khusus)</p>
+                <p>2. Produk bisa langsung diambil kreator untuk review</p>
+                <p>3. Logo brand ditampilkan di semua media publikasi event</p>
+                <p>4. Masuk ke video recap event</p>
+                <p>5. Dapat database kreator potensial yang mendaftar produkmu</p>
+                <p>6. Publikasi eksklusif di akun TikTok @bisamedia.mcn</p>
+                <p>7. MC mention selama event</p>
+                <p>8. Free lunch untuk 1 orang</p>
+              </div>
+              <div class="layanan-box">
+                <h4>VVIP</h4>
+                <h4>Rp.2.500.000</h4>
+                <p>1. Booth utama di area depan</p>
+                <p>2. Slot Prioritas di TAP/TSP Submission Bisa Media</p>
+                <p>3. Liputan video khusus brand</p>
+                <p>4. Dapat akses full peserta + e-sertifikat sponsor</p>
+                <p>5. Live Eksklusif Bersama Kreator binaan Bisa Media</p>
+                <p>6. Dapatkan 10 kreator pilihan dari tim Bisa Media untuk kolaborasi pasca-event</p>
+                <p>7. Publikasi eksklusif di akun TikTok @bisamedia.mcn</p>
+                <p>8. Unlimited produk kolaborasi TAP Link</p>
+                <p>9. MC mention selama event</p>
+                <p>10. Free lunch untuk 1 orang</p>
+              </div>
+            </div>
+          </section>
+
+          <label for="package">Package</label>
+          <select id="package">
+            <option value="">Pilih Package</option>
+            <option value="Reguler">Reguler </option>
+            <option value="VIP">VIP </option>
+            <option value="VVIP">VVIP </option>
+          </select>
+
+          <label for="payment">Payment</label>
+          <input type="text" id="payment" value="QRIS" disabled>
+
+          <label for="bukti">Upload Bukti Payment</label>
+          <input type="file" id="bukti" accept="image/*">
+
+          <button type="button" onclick="showPopup()">Kirim</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>&copy; 2025 BISA MEDIA.MCN. All Rights Reserved.</footer>
+  </div>
+
+  <!-- 🔹 Popup konfirmasi -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Konfirmasi Data</h3>
+      <div class="popup-data" id="popupData"></div>
+      <div style="text-align:center;">
+        <button class="yes" onclick="nextPage()">Ya, data sudah benar</button>
+        <button class="no" onclick="closePopup()">Belum, periksa lagi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Halaman Sukses -->
+  <div class="container success-page" id="successPage">
+    <h2>🎉 Pendaftaran Berhasil!</h2>
+    <p>Terima kasih telah mendaftar di <b>EVENT SIPALING AFFILIATE</b>.<br>
+      Kami akan segera menghubungi Anda melalui email atau WhatsApp.</p>
+    <button onclick="goBack()">Kembali ke Halaman Utama</button>
+  </div>
+
+  <script>
+    function showPopup() {
+      const pic = document.getElementById("pic").value;
+      const contact = document.getElementById("contact").value;
+      const alamat = document.getElementById("alamat").value;
+      const brand = document.getElementById("brand").value;
+      const kategori = document.getElementById("kategori").value;
+      const packageSelected = document.getElementById("package").value;
+      const logo = document.getElementById("logo").files[0] ? document.getElementById("logo").files[0].name : '-';
+      const bukti = document.getElementById("bukti").files[0] ? document.getElementById("bukti").files[0].name : '-';
+      const payment = document.getElementById("payment").value;
+
+      if (!pic || !contact || !alamat || !brand || !kategori || !packageSelected || !bukti || !logo) {
+        alert("Mohon lengkapi semua data sebelum mengirim!");
+        return;
+      }
+
+      const dataPreview = `
+        <b>Nama PIC:</b> ${pic}<br>
+        <b>Contact:</b> ${contact}<br>
+        <b>Alamat:</b> ${alamat}<br>
+        <b>Nama Brand:</b> ${brand}<br>
+        <b>Kategori Produk:</b> ${kategori}<br>
+        <b>Logo:</b> ${logo}<br>
+        <b>Package:</b> ${packageSelected}<br>
+        <b>Payment:</b> ${payment}<br>
+        <b>Bukti Payment:</b> ${bukti}
+      `;
+
+      document.getElementById("popupData").innerHTML = dataPreview;
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function nextPage() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("formPage").style.display = "none";
+      document.getElementById("successPage").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function goBack() {
+      document.getElementById("successPage").style.display = "none";
+      document.getElementById("formPage").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</body>
+
+</html>
