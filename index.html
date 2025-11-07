@@ -215,6 +215,34 @@
       line-height: 1.6;
     }
 
+    /* STATISTIK */
+    .stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #004aad;
+      color: white;
+      border-radius: 12px;
+      width: 85%;
+      margin: -30px auto 40px;
+      padding: 20px 0;
+    }
+
+    .stat-box {
+      flex: 1;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      font-size: 15px;
+    }
+
+    .stat-box p {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+
     /* VISI MISI */
     .visi-container {
       display: flex;
@@ -259,6 +287,24 @@
       height: auto;
       border-radius: 10px;
       object-fit: cover;
+    }
+
+    .layanan-list p {
+      position: relative;
+      padding-left: 30px;
+      margin: 5px 0;
+      font-size: 16px;
+      text-align: left;
+      /* tambahkan ini */
+    }
+
+    .layanan-list p::before {
+      content: "✔";
+      color: #25D366;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
     /* ===== TESTIMONI SECTION ===== */
@@ -436,7 +482,7 @@
     <!-- HEADER -->
     <header class="topbar">
       <img src="images/Logoyaa.png" alt="Logo">
-      <h4>BISA MEDIA.MCN</h4>
+      <h4>BISA MEDIA</h4>
     </header>
 
     <!-- HERO IMAGE -->
@@ -444,7 +490,23 @@
       <img src="images/Bagian1.jpg" alt="Bagian 1">
     </section>
 
-    <!-- CTA -->
+    <!-- STATISTIK -->
+    <section class="section-11">
+      <div class="stats">
+        <div class="stat-box">
+          <h3>Tanggal</h3>
+          <p>Rabu, 17 Desember 2025</p>
+        </div>
+        <div class="stat-box">
+          <h3>Tempat</h3>
+          <p>Hotel Santika, Kota Tasikmalaya</p>
+        </div>
+        <div class="stat-box">
+          <h3>Kreator</h3>
+          <p>300–400 kreator </p>
+        </div>
+      </div>
+    </section>
 
 
     <!-- MAIN CONTENT -->
@@ -453,7 +515,7 @@
         Daftar Sekarang
       </div>
       <img src="images/Bagian2.jpg" alt="Bagian 2">
-      <p>
+      <!-- <p>
         Event ini bukan sekadar pameran, melainkan ajang matchmaking antara brand, seller, dan kreator TikTok aktif.
         Seller akan dikenal langsung oleh ratusan kreator serta MCN Bisa Media, mendapat booth display profesional, dan
         kesempatan produknya direview serta dijual melalui konten kreator, baik Live Streaming maupun Short Video untuk
@@ -465,51 +527,122 @@
         affiliate melalui link TAP. Semua promosi akan didukung Monitoring iklan GMV max produk maupun GMV max Live oleh
         advertising profesional Bisa Media, sehingga seller mendapatkan hasil maksimal dari setiap kolaborasi yang
         terjalin.
-      </p>
+      </p> -->
+
+      <section>
+        <div class="visi-container"
+          style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+          <div class="misi" style="flex: 1; min-width: 300px;">
+            <h4 style="color: #004aad; font-size: 1.5rem; margin-bottom: 10px;">Event ini bukan pameran biasa — ini
+              Matchmaking antara brand, Seller & kreator TikTok aktif. Dengan ikut event ini, kamu akan:</h4>
+            <ol style="font-size: 1rem; line-height: 1.6; padding-left: 20px;">
+              <li>Dikenal langsung oleh ratusan kreator dan MCN Bisa Media</li>
+              <li>Dapat kesempatan produkmu direview & dijual oleh kreator</li>
+              <li>Mendapat booth display profesional</li>
+              <li>Masuk liputan dokumentasi & live streaming</li>
+              <li>Bisa kolaborasi langsung dengan kreator sesuai niche produkmu</li>
+              <li>Bisa kolaborasi langsung dengan link TAP dan terkoneksi dengan ratusan affiliate binaan Bisa Media
+              </li>
+              <li>Berpeluang naikin GMV brand kamu dengan kolaborasi Live maupun Sort Video</li>
+              <li>Monitoring iklan GMV max produk maupun GMV max Live oleh advertising profesional Bisa Media</li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
       <img src="images/Bagian3.jpg" alt="Bagian 3">
 
       <div class="process" aria-labelledby="process-title">
-        <h4 id="process-title">Alur Matchmaking (Langkah demi Langkah)</h4>
+        <h4 id="process-title">Alur Matchmaking Seller x Kreator</h4>
         <ol>
           <li>
             <div class="step-title">Display Produk di Booth Seller</div>
             <div class="step-desc">
-              Seller menampilkan produk unggulan lengkap dengan materi branding. Kreator dapat melihat, mencoba, dan
-              mengenal produk secara langsung.
+              <div class="layanan-list">
+                <p>Setiap seller memiliki booth khusus untuk menampilkan produk unggulan berupa display fisik</p>
+              </div>
+            </div>
+            <div class="step-desc">
+              <div class="layanan-list">
+                <p> Booth boleh dilengkapi dengan X banner brand dan etalase produk agar menarik perhatian peserta yang
+                  lewat.</p>
+              </div>
             </div>
           </li>
           <li>
             <div class="step-title">Kreator Berkunjung & Diskusi</div>
             <div class="step-desc">
-              Kreator berdialog singkat dengan seller untuk memahami detail produk, sistem komisi, serta potensi
-              kolaborasi.
+              <div class="layanan-list">
+                <p> Peserta (kreator) berkeliling mengunjungi booth seller.
+              </div>
+              <div class="step-desc">
+                <div class="layanan-list">
+                  <p> Mereka bisa langsung ngobrol santai dengan seller untuk mengenal produk: keunggulan, harga, komisi
+                    affiliate, hingga cara penggunaannya.
+                </div>
+              </div>
             </div>
           </li>
           <li>
             <div class="step-title">Kreator Tambahkan ke Showcase (Link TAP)</div>
             <div class="step-desc">
-              Produk yang diminati kreator akan dimasukkan ke showcase TikTok Affiliate untuk memudahkan tracking
-              penjualan.
-            </div>
+              <div class="layanan-list">
+                <p> Setelah tertarik, kreator langsung memasukkan produk seller ke link showcase TikTok Affiliate (TAP)
+              </div>
+              <div class="step-desc">
+                <div class="layanan-list">
+                  <p> Kreator menunjukkan bukti kepada seller bahwa produk sudah berhasil dimasukkan ke showcase.
+                </div>
+              </div>
           </li>
           <li>
             <div class="step-title">Verifikasi & Pemberian Sampel</div>
             <div class="step-desc">
-              Seller memverifikasi showcase dan memberikan sampel produk untuk konten review.
+              <div class="layanan-list">
+                <p> Seller melakukan verifikasi bahwa produk benar sudah masuk ke showcase kreator.
+              </div>
+            </div>
+            <div class="step-desc">
+              <div class="layanan-list">
+                <p> Setelah diverifikasi, seller memberikan produk sampel kepada kreator tersebut untuk kebutuhan
+                  konten
+                  review dan promosi.
+              </div>
             </div>
           </li>
           <li>
             <div class="step-title">Database Kolaborasi</div>
             <div class="step-desc">
-              Tim Bisa Media mencatat semua kolaborasi ke dalam database, lengkap dengan data kreator dan produk.
+              <div class="layanan-list">
+                <p> Tim Bisa Media akan membantu mencatat nama kreator yang sudah menerima sampel, beserta produk dan
+                  brand-nya, ke dalam database matchmaking.
+              </div>
+            </div>
+            <div class="step-desc">
+              <div class="layanan-list">
+                <p> Database ini nantinya juga akan dikirim ke seller sebagai rekap kreator yang siap mempromosikan
+                  produknya.
+              </div>
             </div>
           </li>
           <li>
             <div class="step-title">Produksi & Publikasi Konten</div>
             <div class="step-desc">
-              Kreator membuat konten promosi sesuai kesepakatan. Seller akan menerima laporan performa dan hasil
-              kolaborasi.
+              <div class="layanan-list">
+                <p> Setelah event, kreator diwajibkan membuat konten promosi sesuai produk yang diterima.
+              </div>
+            </div>
+            <div class="step-desc">
+              <div class="layanan-list">
+                <p> Seller akan mendapatkan notifikasi update hasil kolaborasi (konten tayang, performa, dan link
+                  promosi
+                  aktif).
+              </div>
+            </div>
+            <div class="step-desc">
+              <div class="layanan-list">
+                <p> Produk yang sudah di terima oleh kreator akan di manage kontennya oleh tim Bisa Media MCN
+              </div>
             </div>
           </li>
         </ol>
@@ -522,40 +655,61 @@
           <li>
             <div class="step-title">Benefit:</div>
             <div class="step-desc">
-              🔵 2 produk showcase (etalase di area booth umum)
+              <div class="layanan-list">
+                <p>2 produk showcase (etalase di area booth umum)</p>
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Ditampilkan di konten kreator melalui link TAP
+              <div class="layanan-list">
+                <p>Ditampilkan di konten kreator melalui link TAP </p>
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Logo brand di backdrop event
+              <div class="layanan-list">
+                <p> Logo brand di backdrop event</p>
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Produk dipajang di booth display profesional
+              <div class="layanan-list">
+                <p> Produk dipajang di booth display profesional</p>
+              </div>
             </div>
             <div class="step-desc">
-              🔵 1 posting eksklusif di akun TikTok @bisamedia.mcn
+              <div class="layanan-list">
+                <p> 1 posting eksklusif di akun TikTok @bisamedia.mcn</p>
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Publikasi apresiasi sponsor
-            </div>
-            <div class="step-desc">
-              🔵 MC mention selama event
-            </div>
-            <div class="step-desc">
-              🔵 Free lunch untuk 1 orang
-            </div>
+              <div class="layanan-list">
+                <p> Publikasi apresiasi sponsor</p>
+              </div>
+              <div class="step-desc">
+                <div class="layanan-list">
+                  <p> MC mention selama event</p>
+                </div>
+              </div>
+              <div class="step-desc">
+                <div class="layanan-list">
+                  <p> Free lunch untuk 1 orang</p>
+                </div>
+              </div>
           </li>
           <li>
             <div class="step-title">Kewajiban Seller:</div>
             <div class="step-desc">
-              🔵 Memberikan sampel produk untuk merchandise ke panitia event matchmaking
+              <div class="layanan-list">
+                <p> Memberikan sampel produk untuk merchandise ke panitia event matchmaking
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Memberikan logo brand untuk di tampilkan di backdrop
+              <div class="layanan-list">
+                <p> Memberikan logo brand untuk di tampilkan di backdrop
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Menyiapkan sampel minimal 10 produk/sku
+              <div class="layanan-list">
+                <p> Menyiapkan sampel minimal 10 produk/sku
+              </div>
             </div>
           </li>
         </ol>
@@ -567,43 +721,67 @@
           <li>
             <div class="step-title">Benefit:</div>
             <div class="step-desc">
-              🔵 Booth eksklusif brand (meja & backdrop khusus)
+              <div class="layanan-list">
+                <p> Booth eksklusif brand (meja & backdrop khusus)
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Produk bisa langsung diambil kreator untuk review
+              <div class="layanan-list">
+                <p> Produk bisa langsung diambil kreator untuk review
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Logo brand ditampilkan di semua media publikasi event
+              <div class="layanan-list">
+                <p> Logo brand ditampilkan di semua media publikasi event
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Masuk ke video recap event
+              <div class="layanan-list">
+                <p> Masuk ke video recap event
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Dapat database kreator potensial yang mendaftar produkmu
+              <div class="layanan-list">
+                <p> Dapat database kreator potensial yang mendaftar produkmu
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Publikasi eksklusif di akun TikTok @bisamedia.mcn
+              <div class="layanan-list">
+                <p> Publikasi eksklusif di akun TikTok @bisamedia.mcn
+              </div>
             </div>
             <div class="step-desc">
-              🔵 MC mention selama event
+              <div class="layanan-list">
+                <p> MC mention selama event
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Free lunch untuk 1 orang
+              <div class="layanan-list">
+                <p> Free lunch untuk 1 orang
+              </div>
             </div>
             <div class="step-desc">
-              🔵Promosi logo di round text selama live streaming di 2 akun tiktok
+              <div class="layanan-list">
+                <p>Promosi logo di round text selama live streaming di 2 akun tiktok
+              </div>
             </div>
           </li>
           <li>
             <div class="step-title">Kewajiban Seller:</div>
             <div class="step-desc">
-              🔵 Memberikan sampel produk untuk merchandise ke panitia event matchmaking
+              <div class="layanan-list">
+                <p> Memberikan sampel produk untuk merchandise ke panitia event matchmaking
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Memberikan logo brand untuk di tampilkan di backdrop
+              <div class="layanan-list">
+                <p> Memberikan logo brand untuk di tampilkan di backdrop
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Menyiapkan sampel minimal 10 produk/sku
+              <div class="layanan-list">
+                <p> Menyiapkan sampel minimal 10 produk/sku
+              </div>
             </div>
           </li>
         </ol>
@@ -615,52 +793,82 @@
           <li>
             <div class="step-title">Benefit Premium:</div>
             <div class="step-desc">
-              🔵 Booth utama di area depan
+              <div class="layanan-list">
+                <p> Booth utama di area depan
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Slot Prioritas di TAP/TSP Submission Bisa Media
+              <div class="layanan-list">
+                <p> Slot Prioritas di TAP/TSP Submission Bisa Media
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Liputan video khusus brand
+              <div class="layanan-list">
+                <p> Liputan video khusus brand
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Dapat akses full peserta + e-sertifikat sponsor
+              <div class="layanan-list">
+                <p> Dapat akses full peserta + e-sertifikat sponsor
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Live Eksklusif Bersama Kreator binaan Bisa Media
+              <div class="layanan-list">
+                <p> Live Eksklusif Bersama Kreator binaan Bisa Media
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Dapatkan 10 kreator pilihan dari tim Bisa Media untuk kolaborasi pasca-event
+              <div class="layanan-list">
+                <p> Dapatkan 10 kreator pilihan dari tim Bisa Media untuk kolaborasi pasca-event
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Publikasi eksklusif di akun TikTok @bisamedia.mcn
+              <div class="layanan-list">
+                <p> Publikasi eksklusif di akun TikTok @bisamedia.mcn
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Unlimited produk kolaborasi TAP Link
+              <div class="layanan-list">
+                <p> Unlimited produk kolaborasi TAP Link
+              </div>
             </div>
             <div class="step-desc">
-              🔵 MC mention selama event
+              <div class="layanan-list">
+                <p> MC mention selama event
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Free lunch untuk 1 orang
+              <div class="layanan-list">
+                <p> Free lunch untuk 1 orang
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Promosi logo di round text selama live streaming di 2 akun tiktok
+              <div class="layanan-list">
+                <p> Promosi logo di round text selama live streaming di 2 akun tiktok
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Iklan pop up 1X gambar atau video selama siaran berlangsung di 2 akun tiktok
+              <div class="layanan-list">
+                <p> Iklan pop up 1X gambar atau video selama siaran berlangsung di 2 akun tiktok
+              </div>
             </div>
           </li>
           <li>
             <div class="step-title">Kewajiban Seller:</div>
             <div class="step-desc">
-              🔵 Memberikan sampel produk untuk merchandise ke panitia event matchmaking
+              <div class="layanan-list">
+                <p> Memberikan sampel produk untuk merchandise ke panitia event matchmaking
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Memberikan logo brand untuk di tampilkan di backdrop
+              <div class="layanan-list">
+                <p> Memberikan logo brand untuk di tampilkan di backdrop
+              </div>
             </div>
             <div class="step-desc">
-              🔵 Menyiapkan sampel minimal 10 produk/sku
+              <div class="layanan-list">
+                <p> Menyiapkan sampel minimal 10 produk/sku
+              </div>
             </div>
           </li>
         </ol>
