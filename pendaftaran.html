@@ -41,12 +41,25 @@
       padding: 10px 25px;
     }
 
+    .topbar .left {
+      display: flex;
+      align-items: center;
+      /* membuat logo dan teks sejajar vertikal */
+      gap: 10px;
+      /* jarak antara logo dan tulisan */
+    }
+
     .topbar img {
       height: 35px;
+      /* tetap ukuran logo */
     }
 
     .topbar h4 {
       font-weight: 600;
+      font-size: 18px;
+      /* bisa disesuaikan */
+      margin: 0;
+      /* hapus margin default */
     }
 
     .aduh {
@@ -146,15 +159,17 @@
     .layanan-box h4 {
       margin: 10px 0;
       color: #004aad;
-      font-size: 18px; /* Judul paket tetap besar */
-    font-weight: 700;
+      font-size: 18px;
+      /* Judul paket tetap besar */
+      font-weight: 700;
     }
 
     .layanan-box p {
-    font-size: 13px; /* Poin lebih kecil */
-    margin: 2px 0;
-    text-align: left;
-  }
+      font-size: 13px;
+      /* Poin lebih kecil */
+      margin: 2px 0;
+      text-align: left;
+    }
 
     /* 🔹 Popup konfirmasi */
     .popup {
@@ -260,14 +275,17 @@
       .container {
         width: 100vw;
       }
-    .layanan {
-    flex-direction: column; /* membuat paket stack 1 per 1 */
-  }
 
-  .layanan-box {
-    min-width: 100%; /* biar tiap box full width */
-  }
-  
+      .layanan {
+        flex-direction: column;
+        /* membuat paket stack 1 per 1 */
+      }
+
+      .layanan-box {
+        min-width: 100%;
+        /* biar tiap box full width */
+      }
+
     }
   </style>
 </head>
@@ -335,6 +353,7 @@
                 <p>6. Publikasi eksklusif di akun TikTok @bisamedia.mcn</p>
                 <p>7. MC mention selama event</p>
                 <p>8. Free lunch untuk 1 orang</p>
+                <p>9. Promosi logo di round text selama live streaming di 2 akun tiktok</p>
               </div>
               <div class="layanan-box">
                 <h4>VVIP</h4>
@@ -349,6 +368,8 @@
                 <p>8. Unlimited produk kolaborasi TAP Link</p>
                 <p>9. MC mention selama event</p>
                 <p>10. Free lunch untuk 1 orang</p>
+                <p>11. Promosi logo di round text selama live streaming di 2 akun tiktok</p>
+                <p>12. Iklan pop up 1X gambar atau video selama siaran berlangsung di 2 akun tiktok</p>
               </div>
             </div>
           </section>
@@ -361,8 +382,13 @@
             <option value="VVIP">VVIP </option>
           </select>
 
-          <label for="payment">Payment</label>
-          <input type="text" id="payment" value="QRIS" disabled>
+          <!-- <label for="payment">Payment</label>
+          <input type="text" id="payment" value="QRIS" disabled> -->
+
+          <section class="aduh">
+            <img src="images/Gambar QRS.jpg" alt="Sampul">
+          </section>
+
 
           <label for="bukti">Upload Bukti Payment</label>
           <input type="file" id="bukti" accept="image/*">
