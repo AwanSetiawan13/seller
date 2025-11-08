@@ -362,7 +362,22 @@
           <input type="text" id="pic" placeholder="Masukkan nama PIC">
 
           <label for="contact">Contact</label>
-          <input type="text" id="contact" placeholder="081234567890">
+<input 
+  type="text" 
+  id="contact" 
+  placeholder="081234567890" 
+  maxlength="13" 
+  required
+  oninput="
+    // Hapus semua karakter non-angka
+    this.value = this.value.replace(/[^0-9]/g, '');
+    // Jika input tidak dimulai dengan '08', kosongkan
+    if (this.value.length >= 2 && !this.value.startsWith('0')) {
+      alert('Nomor harus diawali dengan 0, bukan +62');
+      this.value = '';
+    }
+  ">
+
 
           <label for="alamat">Alamat</label>
           <textarea id="alamat" placeholder="Masukkan alamat" rows="3"></textarea>
