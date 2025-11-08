@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BISA MEDIA.MCN</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
   <style>
     * {
       margin: 0;
@@ -106,6 +105,7 @@
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 15px;
+      width: 100%;
     }
 
     .contact-form button {
@@ -133,7 +133,6 @@
       margin-top: 50px;
     }
 
-    /* LAYANAN */
     .layanan {
       display: flex;
       justify-content: space-between;
@@ -158,18 +157,35 @@
       font-weight: 700;
     }
 
+    /* .layanan-list p {
+      position: relative;
+      padding-left: 30px;
+      margin: 5px 0;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    .layanan-list p::before {
+      content: "✔";
+      color: #25D366;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    } */
+
     .layanan-list p {
       position: relative;
       padding-left: 30px;
       margin: 5px 0;
       font-size: 13px;
       text-align: left;
-      /* tambahkan ini */
+      counter-increment: list-counter;
     }
 
     .layanan-list p::before {
-      content: "✔";
-      color: #25D366;
+      content: counter(list-counter) ".";
+      color: #555555;
       font-weight: bold;
       position: absolute;
       left: 0;
@@ -184,7 +200,13 @@
       color: #004aad;
     }
 
-    /* 🔹 Custom Popup */
+    .center-btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    /* Popup Payment */
     .popup-bg {
       display: none;
       position: fixed;
@@ -192,8 +214,10 @@
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(3px);
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      padding-top: 60px;
       z-index: 1000;
+      overflow-y: auto;
     }
 
     .popup-card {
@@ -206,6 +230,9 @@
       transform: translateY(-50px);
       opacity: 0;
       transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
     .popup-card.show {
@@ -216,7 +243,7 @@
     .popup-card h3 {
       color: #004aad;
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .popup-content {
@@ -225,13 +252,31 @@
       border-radius: 10px;
       font-size: 15px;
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .popup-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .popup-card input,
+    .popup-card select {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      width: 100%;
     }
 
     .popup-btn {
       display: flex;
       justify-content: center;
       gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
     }
 
     .popup-btn button {
@@ -328,67 +373,60 @@
           <label for="kategori">Kategori Produk</label>
           <input type="text" id="kategori" placeholder="Kategori produk">
 
-          <label for="logo">Upload Logo</label>
-          <input type="file" id="logo" accept="image/*">
-
-          <!-- Layanan -->
-          <section>
-            <h2 class="section-title">Package</h2>
-            <div class="layanan">
-              <div class="layanan-box">
-                <h4>Reguler</h4>
-                <h4>Rp.500.000</h4>
-                <div class="layanan-list">
-                  <p>2 produk showcase (etalase di area booth umum)</p>
-                  <p>Ditampilkan di konten kreator melalui link TAP</p>
-                  <p>Logo brand di backdrop event</p>
-                  <p>Produk dipajang di booth display profesional</p>
-                  <p>1 posting eksklusif di akun TikTok @bisamedia.mcn</p>
-                  <p>Publikasi apresiasi sponsor</p>
-                  <p>MC mention selama event</p>
-                  <p>Free lunch untuk 1 orang</p>
-                  <div class="package-total">Total Stok: <span id="stokReguler">10</span></div>
-                </div>
-              </div>
-              <div class="layanan-box">
-                <h4>VIP</h4>
-                <h4>Rp.1.500.000</h4>
-                <div class="layanan-list">
-                  <p>Booth eksklusif brand (meja & backdrop khusus)</p>
-                  <p>Produk bisa langsung diambil kreator untuk review</p>
-                  <p>Logo brand ditampilkan di semua media publikasi event</p>
-                  <p>Masuk ke video recap event</p>
-                  <p>Dapat database kreator potensial yang mendaftar produkmu</p>
-                  <p>Publikasi eksklusif di akun TikTok @bisamedia.mcn</p>
-                  <p>MC mention selama event</p>
-                  <p>Free lunch untuk 1 orang</p>
-                  <p>Promosi logo di round text selama live streaming di 2 akun tiktok</p>
-                  <div class="package-total">Total Stok: <span id="stokVIP">5</span></div>
-                </div>
-              </div>
-              <div class="layanan-box">
-                <h4>VVIP</h4>
-                <h4>Rp.2.500.000</h4>
-                <div class="layanan-list">
-                  <p>Booth utama di area depan</p>
-                  <p>Slot Prioritas di TAP/TSP Submission Bisa Media</p>
-                  <p>Liputan video khusus brand</p>
-                  <p>Dapat akses full peserta + e-sertifikat sponsor</p>
-                  <p>Live Eksklusif Bersama Kreator binaan Bisa Media</p>
-                  <p>Dapatkan 10 kreator pilihan dari tim Bisa Media untuk kolaborasi pasca-event</p>
-                  <p>Publikasi eksklusif di akun TikTok @bisamedia.mcn</p>
-                  <p>Unlimited produk kolaborasi TAP Link</p>
-                  <p>MC mention selama event</p>
-                  <p>Free lunch untuk 1 orang</p>
-                  <p>Promosi logo di round text selama live streaming di 2 akun tiktok</p>
-                  <p>Iklan pop up 1X gambar atau video selama siaran berlangsung di 2 akun tiktok</p>
-                  <div class="package-total">Total Stok: <span id="stokVVIP">2</span></div>
-                </div>
+          <h2 class="section-title">Package</h2>
+          <div class="layanan">
+            <div class="layanan-box">
+              <h4>Reguler</h4>
+              <h4>Rp.500.000</h4>
+              <div class="layanan-list">
+                <p>2 Etalase Produk showcase melalui link TAP</p>
+                <p>Logo brand di backdrop event</p>
+                <p>Produk dipajang di booth display profesional</p>
+                <p>Publikasi eksklusif di akun TikTok @bisamedia.mcn</p>
+                <p>Logo brand ditampilkan di semua media publikasi event</p>
+                <p>Mendapakant e-sertifikat sponsorship</p>
+                <p>MC mention selama event</p>
+                <p>Free lunch untuk 1 orang</p>
+                <div class="package-total">Total Stok: <span id="stokReguler">10</span></div>
               </div>
             </div>
-          </section>
+            <div class="layanan-box">
+              <h4>VIP</h4>
+              <h4>Rp.1.500.000</h4>
+              <div class="layanan-list">
+                <p>5 Etalase Produk showcase melalui link TAP</p>
+                <p>Booth eksklusif brand (meja & backdrop khusus)</p>
+                <p>Produk bisa langsung diambil kreator untuk review</p>
+                <p>Logo brand ditampilkan di semua media publikasi event</p>
+                <p>Masuk ke video recap event</p>
+                <p>Publikasi eksklusif di akun TikTok @bisamedia.mcn</p>
+                <p>Mendapakant e-sertifikat sponsorship</p>
+                <p>MC mention selama event</p>
+                <p>Free lunch untuk 1 orang</p>
+                <div class="package-total">Total Stok: <span id="stokVIP">5</span></div>
+              </div>
+            </div>
+            <div class="layanan-box">
+              <h4>VVIP</h4>
+              <h4>Rp.2.500.000</h4>
+              <div class="layanan-list">
+                <p>10 Etalase Produk showcase melalui link TAP</p>
+                <p>Booth utama di area depan</p>
+                <p>Slot Prioritas di TAP/TSP Submission Bisa Media</p>
+                <p>Masuk ke video recap event</p>
+                <p>Mendapakant e-sertifikat sponsorship</p>
+                <p>Live Eksklusif Bersama Kreator binaan Bisa Media</p>
+                <p>Dapatkan kreator pilihan dari tim Bisa Media untuk kolaborasi pasca-event</p>
+                <p>Publikasi eksklusif di akun TikTok @bisamedia.mcn</p>
+                <p>Logo brand ditampilkan di semua media publikasi event</p>
+                <p>MC mention selama event</p>
+                <p>Free lunch untuk 1 orang</p>
+                <div class="package-total">Total Stok: <span id="stokVVIP">2</span></div>
+              </div>
+            </div>
+          </div>
 
-          <label for="package">Package</label>
+          <label for="package">Pilih Package</label>
           <select id="package">
             <option value="">Pilih Package</option>
             <option value="Reguler">Reguler</option>
@@ -396,14 +434,9 @@
             <option value="VVIP">VVIP</option>
           </select>
 
-          <section class="aduh">
-            <img src="images/Gambar QRS.jpg" alt="Sampul">
-          </section>
-
-          <label for="bukti">Upload Bukti Payment</label>
-          <input type="file" id="bukti" accept="image/*">
-
-          <button type="button" onclick="showPopup()">Kirim</button>
+          <div class="center-btn">
+            <button type="button" onclick="showPaymentPopup()">Payment</button>
+          </div>
         </div>
       </div>
     </section>
@@ -411,88 +444,173 @@
     <footer>&copy; 2025 BISA MEDIA.MCN. All Rights Reserved.</footer>
   </div>
 
-  <!-- Custom Popup -->
-  <div class="popup-bg" id="popup">
-    <div class="popup-card" id="popupCard">
+  <!-- Popup Payment -->
+  <div class="popup-bg" id="popupPayment">
+    <div class="popup-card" id="paymentCard">
+      <h3>Payment</h3>
+      <div class="popup-content" id="paymentInfo">
+        <div id="priceDetail"></div>
+        <label for="kupon">Kode Kupon</label>
+        <input type="text" id="kupon" placeholder="Masukkan kode kupon">
+        <div id="finalPrice" style="margin-top:10px; font-weight:600; color:#004aad;"></div>
+        <img src="images/Gambar QRS.jpg" alt="QR Code">
+      </div>
+      <label for="buktiPayment">Upload Bukti Payment</label>
+      <input type="file" id="buktiPayment" accept="image/*">
+      <div class="popup-btn">
+        <button class="no" onclick="closePaymentPopup()">Kembali ke Halaman Awal</button>
+        <button class="yes" onclick="sendPayment()">Kirim</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Konfirmasi -->
+  <div class="popup-bg" id="popupConfirm">
+    <div class="popup-card" id="confirmCard">
       <h3>Konfirmasi Data</h3>
-      <div class="popup-content" id="popupData"></div>
+      <div class="popup-content" id="confirmData"></div>
       <div class="popup-btn">
         <button class="yes" onclick="nextPage()">Ya, data sudah benar</button>
-        <button class="no" onclick="closePopup()">Periksa Lagi</button>
+        <button class="no" onclick="closeConfirmPopup()">Periksa Lagi</button>
       </div>
     </div>
   </div>
 
   <!-- Halaman Sukses -->
-  <div class="container success-page" id="successPage">
+  <div class="container success-page" id="successPage" style="display:none;">
     <h2>🎉 Pendaftaran Berhasil!</h2>
-    <p>Terima kasih telah mendaftar di <b>EVENT SIPALING AFFILIATE</b>.<br>
-      Kami akan segera menghubungi Anda melalui email atau WhatsApp.</p>
-    <button onclick="goBack()">Kembali ke Halaman Utama</button>
+    <p>Terima kasih telah melakukan pendaftaran.</p>
+    <p>Untuk menyelesaikan proses, silakan konfirmasi pembayaran Anda ke Admin melalui WhatsApp di bawah ini.</p>
+
+    <a id="waLink" href="#" class="wa-button" target="_blank"
+      style="display:inline-block; background:#25D366; color:white; padding:12px 25px; border-radius:8px; font-weight:600; text-decoration:none; margin-top:15px;">
+      Konfirmasi ke Admin via WhatsApp
+    </a>
+
+    <br>
+
+    <button onclick="goBack()"
+      style="background-color:#004aad; color:white; border:none; padding:10px 25px; border-radius:8px; margin-top:15px; cursor:pointer; font-size:15px;">
+      Kembali ke Halaman Awal
+    </button>
   </div>
+
+  <script>
+    const adminNumber = "6287847687691"; // nomor WA admin
+
+    function nextPage() {
+      const namaPIC = document.getElementById("pic").value;
+      const packageSelected = document.getElementById("package").value;
+      const waText = `Halo admin, saya ${namaPIC} sudah melakukan pembayaran untuk EVENT SIPALING AFFILIATE dengan paket ${packageSelected}.`;
+
+      const encodedText = encodeURIComponent(waText);
+      const waURL = `https://wa.me/${adminNumber}?text=${encodedText}`;
+      document.getElementById("waLink").href = waURL;
+
+      document.getElementById("popupConfirm").style.display = "none";
+      document.getElementById("formPage").style.display = "none";
+      document.getElementById("successPage").style.display = "block";
+    }
+  </script>
 
   <script>
     let stok = { Reguler: 10, VIP: 5, VVIP: 2 };
 
-    function showPopup() {
+    function showPaymentPopup() {
+      const packageSelected = document.getElementById("package").value;
+      if (!packageSelected) { alert("Silakan pilih package terlebih dahulu!"); return; }
+      if (stok[packageSelected] <= 0) { alert(`Maaf, package ${packageSelected} sudah habis!`); return; }
+
+      let harga = { Reguler: 500000, VIP: 1500000, VVIP: 2500000 };
+      const priceDetail = document.getElementById("priceDetail");
+      const finalPrice = document.getElementById("finalPrice");
+      const kuponInput = document.getElementById("kupon");
+
+      const kuponList = { "EVENT10": 10, "BISAMEDIA20": 20, "VIP30": 30 };
+
+      function updateFinalPrice() {
+        let kode = kuponInput.value.trim().toUpperCase();
+        let diskon = kuponList[kode] || 0;
+        let hargaAkhir = harga[packageSelected] * (1 - diskon / 100);
+        if (diskon > 0) {
+          finalPrice.innerHTML = `<b>Kode diterima!</b> Diskon ${diskon}% <br> Harga Akhir: Rp.${hargaAkhir.toLocaleString()}`;
+          finalPrice.style.color = "#00a859";
+        } else if (kode.length > 0) {
+          finalPrice.innerHTML = `<span style="color:red;">Kode kupon tidak valid</span>`;
+        } else {
+          finalPrice.innerHTML = `<b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}`;
+        }
+      }
+
+      priceDetail.innerHTML = `
+        <b>Package:</b> ${packageSelected} <br>
+        <b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}
+      `;
+      finalPrice.innerHTML = `<b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}`;
+      kuponInput.value = '';
+      kuponInput.oninput = updateFinalPrice;
+
+      document.getElementById("popupPayment").style.display = "flex";
+      setTimeout(() => document.getElementById("paymentCard").classList.add("show"), 10);
+    }
+
+    function closePaymentPopup() {
+      const card = document.getElementById("paymentCard");
+      card.classList.remove("show");
+      setTimeout(() => document.getElementById("popupPayment").style.display = "none", 300);
+    }
+
+    function sendPayment() {
       const pic = document.getElementById("pic").value;
       const contact = document.getElementById("contact").value;
       const alamat = document.getElementById("alamat").value;
       const brand = document.getElementById("brand").value;
       const kategori = document.getElementById("kategori").value;
       const packageSelected = document.getElementById("package").value;
-      const logo = document.getElementById("logo").files[0] ? document.getElementById("logo").files[0].name : '-';
-      const bukti = document.getElementById("bukti").files[0] ? document.getElementById("bukti").files[0].name : '-';
+      const bukti = document.getElementById("buktiPayment").files[0] ? document.getElementById("buktiPayment").files[0].name : '-';
+      const kupon = document.getElementById("kupon").value.trim().toUpperCase();
 
-      if (!pic || !contact || !alamat || !brand || !kategori || !packageSelected || !bukti || !logo) {
+      if (!pic || !contact || !alamat || !brand || !kategori || !packageSelected || !bukti) {
         alert("Mohon lengkapi semua data sebelum mengirim!");
         return;
       }
 
-      if (stok[packageSelected] <= 0) {
-        alert(`Maaf, package ${packageSelected} sudah habis!`);
-        return;
-      }
+      const kuponList = { "EVENT10": 10, "BISAMEDIA20": 20, "VIP30": 30 };
+      const diskon = kuponList[kupon] || 0;
+      let harga = { Reguler: 500000, VIP: 1500000, VVIP: 2500000 };
+      let hargaAkhir = harga[packageSelected] * (1 - diskon / 100);
 
       stok[packageSelected] -= 1;
       document.getElementById(`stok${packageSelected}`).textContent = stok[packageSelected];
 
+      closePaymentPopup();
+
       const dataPreview = `
-    <b>Nama PIC:</b> ${pic}<br>
-    <b>Contact:</b> ${contact}<br>
-    <b>Alamat:</b> ${alamat}<br>
-    <b>Nama Brand:</b> ${brand}<br>
-    <b>Kategori Produk:</b> ${kategori}<br>
-    <b>Logo:</b> ${logo}<br>
-    <b>Package:</b> ${packageSelected}<br>
-    <b>Bukti Payment:</b> ${bukti}<br>
-    <b>Sisa Stok ${packageSelected}:</b> ${stok[packageSelected]}
-  `;
-      document.getElementById("popupData").innerHTML = dataPreview;
-
-      const popupBg = document.getElementById("popup");
-      const popupCard = document.getElementById("popupCard");
-      popupBg.style.display = "flex";
-      setTimeout(() => popupCard.classList.add("show"), 10);
+        <b>Nama PIC:</b> ${pic}<br>
+        <b>Contact:</b> ${contact}<br>
+        <b>Alamat:</b> ${alamat}<br>
+        <b>Brand:</b> ${brand}<br>
+        <b>Kategori:</b> ${kategori}<br>
+        <b>Package:</b> ${packageSelected}<br>
+        <b>Kode Kupon:</b> ${kupon || "-"}<br>
+        <b>Diskon:</b> ${diskon}%<br>
+        <b>Harga Akhir:</b> Rp.${hargaAkhir.toLocaleString()}<br>
+        <b>Bukti Payment:</b> ${bukti}
+      `;
+      document.getElementById("confirmData").innerHTML = dataPreview;
+      document.getElementById("popupConfirm").style.display = "flex";
+      setTimeout(() => document.getElementById("confirmCard").classList.add("show"), 10);
     }
 
-    function closePopup() {
-      const popupCard = document.getElementById("popupCard");
-      popupCard.classList.remove("show");
-      setTimeout(() => document.getElementById("popup").style.display = "none", 300);
-    }
-
-    function nextPage() {
-      closePopup();
-      document.getElementById("formPage").style.display = "none";
-      document.getElementById("successPage").style.display = "block";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    function closeConfirmPopup() {
+      const card = document.getElementById("confirmCard");
+      card.classList.remove("show");
+      setTimeout(() => document.getElementById("popupConfirm").style.display = "none", 300);
     }
 
     function goBack() {
       document.getElementById("successPage").style.display = "none";
       document.getElementById("formPage").style.display = "block";
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   </script>
 </body>
