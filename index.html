@@ -473,6 +473,44 @@
           padding: 20px;
         }
       }
+
+      footer {
+        text-align: center;
+        padding: 20px 10px;
+        background-color: #004aad;
+        /* biru utama */
+        color: #fff;
+        font-size: 14px;
+      }
+
+      .social-links {
+        margin-top: 10px;
+      }
+
+      .social-links a {
+        margin: 0 8px;
+        display: inline-block;
+      }
+
+      .icon {
+        width: 28px;
+        height: 28px;
+        transition: transform 0.2s ease;
+      }
+
+      .tiktok-icon {
+        filter: brightness(0) invert(1);
+        /* Putihkan TikTok biar kontras */
+      }
+
+      .wa-icon {
+        filter: none;
+        /* Biarkan hijau natural */
+      }
+
+      .icon:hover {
+        transform: scale(1.2);
+      }
     }
   </style>
 </head>
@@ -1085,7 +1123,59 @@ Terima kasih!`;
 
 
     <!-- FOOTER -->
-    <footer>&copy; 2025 BISA MEDIA.MCN. All Rights Reserved.</footer>
+
+    <footer>
+      <p>&copy; 2025 BISA MEDIA.MCN. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="https://www.tiktok.com/@bisamedia.mcn" target="_blank" title="Kunjungi TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" class="icon tiktok-icon">
+        </a>
+        <a href="https://wa.me/6287847687691?text=Halo%20Admin" target="_blank" title="Hubungi via WhatsApp">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon wa-icon">
+        </a>
+      </div>
+    </footer>
+
+    <style>
+      footer {
+        text-align: center;
+        padding: 20px 10px;
+        background-color: #004aad;
+        /* biru utama */
+        color: #fff;
+        font-size: 14px;
+      }
+
+      .social-links {
+        margin-top: 10px;
+      }
+
+      .social-links a {
+        margin: 0 8px;
+        display: inline-block;
+      }
+
+      .icon {
+        width: 28px;
+        height: 28px;
+        transition: transform 0.2s ease;
+      }
+
+      .tiktok-icon {
+        filter: brightness(0) invert(1);
+        /* Putihkan TikTok biar kontras */
+      }
+
+      .wa-icon {
+        filter: none;
+        /* Biarkan hijau natural */
+      }
+
+      .icon:hover {
+        transform: scale(1.2);
+      }
+    </style>
+
   </div>
 </body>
 
