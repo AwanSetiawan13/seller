@@ -7,341 +7,53 @@
   <title>BISA MEDIA.MCN</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: #f4f7fc;
-      display: flex;
-      justify-content: center;
-      color: #222;
-      scroll-behavior: smooth;
-    }
-
-    .container {
-      width: 50vw;
-      background: #fff;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      margin-bottom: 50px;
-    }
-
-    .topbar {
-      background-color: #004aad;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 25px;
-    }
-
-    .topbar .left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .topbar img {
-      height: 35px;
-    }
-
-    .topbar h4 {
-      font-weight: 600;
-      font-size: 18px;
-      margin: 0;
-    }
-
-    .aduh {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      padding: 40px;
-    }
-
-    .aduh img {
-      width: 100%;
-      max-width: 1080px;
-      border-radius: 14px;
-      border: 2px solid #004aad;
-    }
-
-    h2.section-title {
-      text-align: center;
-      font-size: 22px;
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 25px;
-    }
-
-    .contact {
-      display: flex;
-      justify-content: center;
-      margin: 50px auto;
-      width: 80%;
-      max-width: 900px;
-    }
-
-    .contact-form {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-form label {
-      font-weight: 600;
-      color: #004aad;
-    }
-
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 15px;
-      width: 100%;
-    }
-
-    .contact-form button {
-      background-color: #25D366;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 16px;
-      transition: 0.2s;
-    }
-
-    .contact-form button:hover {
-      background-color: #1ebe5d;
-      transform: translateY(-2px);
-    }
-
-    footer {
-      background: #004aad;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
-    }
-
-    .layanan {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .layanan-box {
-      flex: 1;
-      min-width: 30%;
-      border: 1.5px solid #004aad;
-      border-radius: 10px;
-      text-align: center;
-      padding: 15px;
-      background: #fff;
-    }
-
-    .layanan-box h4 {
-      margin: 10px 0;
-      color: #004aad;
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    /* .layanan-list p {
-      position: relative;
-      padding-left: 30px;
-      margin: 5px 0;
-      font-size: 13px;
-      text-align: left;
-    }
-
-    .layanan-list p::before {
-      content: "✔";
-      color: #25D366;
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-      top: 0;
-    } */
-
-    .layanan-list p {
-      position: relative;
-      padding-left: 30px;
-      margin: 5px 0;
-      font-size: 13px;
-      text-align: left;
-      counter-increment: list-counter;
-    }
-
-    .layanan-list p::before {
-      content: counter(list-counter) ".";
-      color: #555555;
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    .package-total {
-      border-top: 1px solid #004aad;
-      margin-top: 10px;
-      padding-top: 8px;
-      font-weight: 600;
-      color: #004aad;
-    }
-
-    .center-btn {
-      display: flex;
-      justify-content: center;
-      margin-top: 15px;
-    }
-
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+    body {background:#f4f7fc; display:flex; justify-content:center; color:#222; scroll-behavior:smooth;}
+    .container {width:50vw; background:#fff; box-shadow:0 4px 15px rgba(0,0,0,0.1); overflow:hidden; margin-bottom:50px;}
+    .topbar {background-color:#004aad; color:white; display:flex; justify-content:space-between; align-items:center; padding:10px 25px;}
+    .topbar .left {display:flex; align-items:center; gap:10px;}
+    .topbar img {height:35px;}
+    .topbar h4 {font-weight:600; font-size:18px; margin:0;}
+    .aduh {display:flex; flex-direction:column; align-items:center; gap:30px; padding:40px;}
+    .aduh img {width:100%; max-width:1080px; border-radius:14px; border:2px solid #004aad;}
+    h2.section-title {text-align:center; font-size:22px; font-weight:700; color:#222; margin-bottom:25px;}
+    .contact {display:flex; justify-content:center; margin:50px auto; width:80%; max-width:900px;}
+    .contact-form {width:100%; display:flex; flex-direction:column; gap:15px;}
+    .contact-form label {font-weight:600; color:#004aad;}
+    .contact-form input, .contact-form select, .contact-form textarea {padding:12px; border-radius:8px; border:1px solid #ccc; font-size:15px; width:100%;}
+    .contact-form button {background-color:#25D366; color:white; border:none; padding:12px; border-radius:8px; cursor:pointer; font-weight:600; font-size:16px; transition:0.2s;}
+    .contact-form button:hover {background-color:#1ebe5d; transform:translateY(-2px);}
+    footer {background:#004aad; color:#fff; text-align:center; padding:15px; margin-top:50px;}
+    .layanan {display:flex; justify-content:space-between; gap:15px; flex-wrap:wrap;}
+    .layanan-box {flex:1; min-width:30%; border:1.5px solid #004aad; border-radius:10px; text-align:center; padding:15px; background:#fff;}
+    .layanan-box h4 {margin:10px 0; color:#004aad; font-size:18px; font-weight:700;}
+    .layanan-list p {position:relative; padding-left:30px; margin:5px 0; font-size:13px; text-align:left; counter-increment:list-counter;}
+    .layanan-list p::before {content:counter(list-counter) "."; color:#555555; font-weight:bold; position:absolute; left:0; top:0;}
+    .package-total {border-top:1px solid #004aad; margin-top:10px; padding-top:8px; font-weight:600; color:#004aad;}
+    .center-btn {display:flex; justify-content:center; margin-top:15px;}
     /* Popup Payment */
-    .popup-bg {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(3px);
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 60px;
-      z-index: 1000;
-      overflow-y: auto;
-    }
-
-    .popup-card {
-      background: #fff;
-      width: 90%;
-      max-width: 450px;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-      transform: translateY(-50px);
-      opacity: 0;
-      transition: 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .popup-card.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    .popup-card h3 {
-      color: #004aad;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .popup-content {
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 15px;
-      text-align: left;
-    }
-
-    .popup-content img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    .popup-card input,
-    .popup-card select {
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 15px;
-      width: 100%;
-    }
-
-    .popup-btn {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .popup-btn button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .popup-btn .yes {
-      background: #25D366;
-      color: white;
-    }
-
-    .popup-btn .no {
-      background: #ccc;
-      color: #333;
-    }
-
+    .popup-bg {display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); backdrop-filter:blur(3px); justify-content:center; align-items:flex-start; padding-top:60px; z-index:1000; overflow-y:auto;}
+    .popup-card {background:#fff; width:90%; max-width:450px; border-radius:15px; padding:25px; box-shadow:0 10px 25px rgba(0,0,0,0.25); transform:translateY(-50px); opacity:0; transition:0.3s ease; display:flex; flex-direction:column; gap:15px;}
+    .popup-card.show {transform:translateY(0); opacity:1;}
+    .popup-card h3 {color:#004aad; text-align:center; margin-bottom:10px;}
+    .popup-content {background:#f9f9f9; padding:15px; border-radius:10px; font-size:15px; line-height:1.6; margin-bottom:15px; text-align:left;}
+    .popup-content img {width:100%; border-radius:10px; margin-top:10px;}
+    .popup-card input, .popup-card select {padding:12px; border-radius:8px; border:1px solid #ccc; font-size:15px; width:100%;}
+    .popup-btn {display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:10px;}
+    .popup-btn button {padding:10px 20px; border:none; border-radius:8px; cursor:pointer; font-weight:600;}
+    .popup-btn .yes {background:#25D366; color:white;}
+    .popup-btn .no {background:#ccc; color:#333;}
     /* Success Page */
-    .success-page {
-      display: none;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .success-page h2 {
-      color: #004aad;
-      margin-bottom: 15px;
-    }
-
-    .success-page p {
-      font-size: 16px;
-      color: #333;
-    }
-
-    .success-page button {
-      background-color: #004aad;
-      color: white;
-      border: none;
-      padding: 10px 25px;
-      border-radius: 8px;
-      margin-top: 25px;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    @media(max-width:600px) {
-      .container {
-        width: 100vw;
-      }
-
-      .layanan {
-        flex-direction: column;
-      }
-
-      .layanan-box {
-        min-width: 100%;
-      }
-    }
+    .success-page {display:none; text-align:center; padding:60px 20px;}
+    .success-page h2 {color:#004aad; margin-bottom:15px;}
+    .success-page p {font-size:16px; color:#333;}
+    .success-page button {background-color:#004aad; color:white; border:none; padding:10px 25px; border-radius:8px; margin-top:25px; cursor:pointer; font-size:15px;}
+    @media(max-width:600px){.container{width:100vw;}.layanan{flex-direction:column;}.layanan-box{min-width:100%;}}
   </style>
 </head>
 
 <body>
+  <!-- FORM PAGE -->
   <div class="container" id="formPage">
     <div class="topbar">
       <div class="left">
@@ -360,39 +72,22 @@
         <div class="contact-form">
           <label for="pic">Nama PIC</label>
           <input type="text" id="pic" placeholder="Masukkan nama PIC">
-
           <label for="contact">Contact</label>
-<input 
-  type="text" 
-  id="contact" 
-  placeholder="081234567890" 
-  maxlength="13" 
-  required
-  oninput="
-    // Hapus semua karakter non-angka
-    this.value = this.value.replace(/[^0-9]/g, '');
-    // Jika input tidak dimulai dengan '08', kosongkan
-    if (this.value.length >= 2 && !this.value.startsWith('0')) {
-      alert('Nomor harus diawali dengan 0, bukan +62');
-      this.value = '';
-    }
-  ">
-
-
+          <input type="text" id="contact" placeholder="081234567890" maxlength="13" required
+            oninput="this.value=this.value.replace(/[^0-9]/g,''); if(this.value.length>=2 && !this.value.startsWith('0')){alert('Nomor harus diawali dengan 0, bukan +62'); this.value='';}">
           <label for="alamat">Alamat</label>
           <textarea id="alamat" placeholder="Masukkan alamat" rows="3"></textarea>
-
           <label for="brand">Nama Brand</label>
           <input type="text" id="brand" placeholder="Nama brand">
-
           <label for="kategori">Kategori Produk</label>
           <input type="text" id="kategori" placeholder="Kategori produk">
-
           <label for="UploadLogo">Upload Logo</label>
           <input type="file" id="UploadLogo" accept="image/*">
 
           <h2 class="section-title">Package</h2>
           <div class="layanan">
+            <!-- Layanan boxes tetap sama -->
+            <!-- Reguler -->
             <div class="layanan-box">
               <h4>Reguler</h4>
               <h4>Rp.500.000</h4>
@@ -408,6 +103,7 @@
                 <div class="package-total">Total Stok: <span id="stokReguler">10</span></div>
               </div>
             </div>
+            <!-- VIP -->
             <div class="layanan-box">
               <h4>VIP</h4>
               <h4>Rp.1.500.000</h4>
@@ -424,6 +120,7 @@
                 <div class="package-total">Total Stok: <span id="stokVIP">5</span></div>
               </div>
             </div>
+            <!-- VVIP -->
             <div class="layanan-box">
               <h4>VVIP</h4>
               <h4>Rp.2.500.000</h4>
@@ -459,61 +156,12 @@
       </div>
     </section>
 
-         <!-- FOOTER -->
-
     <footer>
       <p>&copy; 2025 BISA MEDIA.MCN. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="https://www.tiktok.com/@bisamedia.mcn" target="_blank" title="Kunjungi TikTok">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" class="icon tiktok-icon">
-        </a>
-        <a href="https://wa.me/6287847687691?text=Halo%20Admin" target="_blank" title="Hubungi via WhatsApp">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon wa-icon">
-        </a>
-      </div>
     </footer>
+  </div>
 
-    <style>
-      footer {
-        text-align: center;
-        padding: 20px 10px;
-        background-color: #004aad;
-        /* biru utama */
-        color: #fff;
-        font-size: 14px;
-      }
-
-      .social-links {
-        margin-top: 10px;
-      }
-
-      .social-links a {
-        margin: 0 8px;
-        display: inline-block;
-      }
-
-      .icon {
-        width: 28px;
-        height: 28px;
-        transition: transform 0.2s ease;
-      }
-
-      .tiktok-icon {
-        filter: brightness(0) invert(1);
-        /* Putihkan TikTok biar kontras */
-      }
-
-      .wa-icon {
-        filter: none;
-        /* Biarkan hijau natural */
-      }
-
-      .icon:hover {
-        transform: scale(1.2);
-      }
-    </style>
-
-  <!-- Popup Payment -->
+  <!-- POPUP PAYMENT -->
   <div class="popup-bg" id="popupPayment">
     <div class="popup-card" id="paymentCard">
       <h3>Payment</h3>
@@ -533,7 +181,7 @@
     </div>
   </div>
 
-  <!-- Popup Konfirmasi -->
+  <!-- POPUP KONFIRMASI -->
   <div class="popup-bg" id="popupConfirm">
     <div class="popup-card" id="confirmCard">
       <h3>Konfirmasi Data</h3>
@@ -545,169 +193,136 @@
     </div>
   </div>
 
-  <!-- Halaman Sukses -->
-  <div class="container success-page" id="successPage" style="display:none;">
+  <!-- HALAMAN SUKSES -->
+  <div class="container success-page" id="successPage">
     <h2>🎉 Pendaftaran Berhasil!</h2>
     <p>Terima kasih telah melakukan pendaftaran.</p>
     <p>Untuk menyelesaikan proses, silakan konfirmasi pembayaran Anda ke Admin melalui WhatsApp di bawah ini.</p>
-
     <a id="waLink" href="#" class="wa-button" target="_blank"
       style="display:inline-block; background:#25D366; color:white; padding:12px 25px; border-radius:8px; font-weight:600; text-decoration:none; margin-top:15px;">
       Konfirmasi ke Admin via WhatsApp
     </a>
-
     <br>
-
-    <button onclick="goBack()"
-      style="background-color:#004aad; color:white; border:none; padding:10px 25px; border-radius:8px; margin-top:15px; cursor:pointer; font-size:15px;">
-      Kembali ke Halaman Awal
-    </button>
+    <button onclick="goBack()">Kembali ke Halaman Awal</button>
   </div>
 
   <script>
     const adminNumber = "6287847687691"; // nomor WA admin
+    let stok = { Reguler: 10, VIP: 5, VVIP: 2 };
+
+    function showPaymentPopup() {
+      const packageSelected = document.getElementById("package").value;
+      if (!packageSelected) { alert("Silakan pilih package terlebih dahulu!"); return; }
+      if (stok[packageSelected] <= 0) { alert(`Maaf, package ${packageSelected} sudah habis!`); return; }
+
+      let harga = { Reguler: 500000, VIP: 1500000, VVIP: 2500000 };
+      const priceDetail = document.getElementById("priceDetail");
+      const finalPrice = document.getElementById("finalPrice");
+      const kuponInput = document.getElementById("kupon");
+      const kuponList = { "EVENT10": 10, "BISAMEDIA20": 20, "VIP30": 30 };
+
+      function updateFinalPrice() {
+        let kode = kuponInput.value.trim().toUpperCase();
+        let diskon = kuponList[kode] || 0;
+        let hargaAkhir = harga[packageSelected] * (1 - diskon / 100);
+        if (diskon > 0) {
+          finalPrice.innerHTML = `<b>Kode diterima!</b> Diskon ${diskon}% <br> Harga Akhir: Rp.${hargaAkhir.toLocaleString()}`;
+          finalPrice.style.color = "#00a859";
+        } else if (kode.length > 0) {
+          finalPrice.innerHTML = `<span style="color:red;">Kode kupon tidak valid</span>`;
+        } else {
+          finalPrice.innerHTML = `<b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}`;
+        }
+      }
+
+      priceDetail.innerHTML = `<b>Package:</b> ${packageSelected} <br> <b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}`;
+      finalPrice.innerHTML = `<b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}`;
+      kuponInput.value = '';
+      kuponInput.oninput = updateFinalPrice;
+
+      document.getElementById("popupPayment").style.display = "flex";
+      setTimeout(() => document.getElementById("paymentCard").classList.add("show"), 10);
+    }
+
+    function closePaymentPopup() {
+      const card = document.getElementById("paymentCard");
+      card.classList.remove("show");
+      setTimeout(() => document.getElementById("popupPayment").style.display = "none", 300);
+    }
+
+    function sendPayment() {
+      const pic = document.getElementById("pic").value;
+      const contact = document.getElementById("contact").value;
+      const alamat = document.getElementById("alamat").value;
+      const brand = document.getElementById("brand").value;
+      const kategori = document.getElementById("kategori").value;
+      const packageSelected = document.getElementById("package").value;
+      const buktiFile = document.getElementById("buktiPayment").files[0];
+      const logoFile = document.getElementById("UploadLogo").files[0];
+      const kupon = document.getElementById("kupon").value.trim().toUpperCase();
+
+      if (!pic || !contact || !alamat || !brand || !kategori || !packageSelected || !buktiFile || !logoFile) {
+        alert("Mohon lengkapi semua data sebelum mengirim!");
+        return;
+      }
+
+      const kuponList = { "EVENT10": 10, "BISAMEDIA20": 20, "VIP30": 30 };
+      const diskon = kuponList[kupon] || 0;
+      let harga = { Reguler: 500000, VIP: 1500000, VVIP: 2500000 };
+      let hargaAkhir = harga[packageSelected] * (1 - diskon / 100);
+
+      stok[packageSelected] -= 1;
+      document.getElementById(`stok${packageSelected}`).textContent = stok[packageSelected];
+
+      closePaymentPopup();
+
+      const readerLogo = new FileReader();
+      const readerBukti = new FileReader();
+
+      readerLogo.onload = function (eLogo) {
+        readerBukti.onload = function (eBukti) {
+          const gambarPreview = `<div style="display:flex; justify-content:center; align-items:center; gap:20px; margin-top:10px;">
+            <div style="text-align:center;"><b>Logo Brand:</b><br><img src="${eLogo.target.result}" alt="Logo Brand" style="width:120px; border-radius:8px; border:1px solid #ccc;"></div>
+            <div style="text-align:center;"><b>Bukti Payment:</b><br><img src="${eBukti.target.result}" alt="Bukti Payment" style="width:120px; border-radius:8px; border:1px solid #ccc;"></div>
+          </div>`;
+
+          const dataPreview = `<b>Nama PIC:</b> ${pic}<br><b>Contact:</b> ${contact}<br><b>Alamat:</b> ${alamat}<br><b>Brand:</b> ${brand}<br><b>Kategori:</b> ${kategori}<br><b>Package:</b> ${packageSelected}<br><b>Kode Kupon:</b> ${kupon || "-"}<br><b>Diskon:</b> ${diskon}%<br><b>Harga Akhir:</b> Rp.${hargaAkhir.toLocaleString()}<br>${gambarPreview}`;
+
+          document.getElementById("confirmData").innerHTML = dataPreview;
+          document.getElementById("popupConfirm").style.display = "flex";
+          setTimeout(() => document.getElementById("confirmCard").classList.add("show"), 10);
+        };
+        readerBukti.readAsDataURL(buktiFile);
+      };
+      readerLogo.readAsDataURL(logoFile);
+    }
+
+    function closeConfirmPopup() {
+      const card = document.getElementById("confirmCard");
+      card.classList.remove("show");
+      setTimeout(() => document.getElementById("popupConfirm").style.display = "none", 300);
+    }
 
     function nextPage() {
+      closeConfirmPopup();
+      document.getElementById("formPage").style.display = "none";
+      document.getElementById("successPage").style.display = "block";
+
       const namaPIC = document.getElementById("pic").value;
       const packageSelected = document.getElementById("package").value;
       const waText = `Halo admin, saya ${namaPIC} sudah melakukan pembayaran untuk EVENT SIPALING AFFILIATE dengan paket ${packageSelected}.`;
-
       const encodedText = encodeURIComponent(waText);
-      const waURL = `https://wa.me/${adminNumber}?text=${encodedText}`;
-      document.getElementById("waLink").href = waURL;
+      document.getElementById("waLink").href = `https://wa.me/${adminNumber}?text=${encodedText}`;
 
-      document.getElementById("popupConfirm").style.display = "none";
-      document.getElementById("formPage").style.display = "none";
-      document.getElementById("successPage").style.display = "block";
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goBack() {
+      document.getElementById("successPage").style.display = "none";
+      document.getElementById("formPage").style.display = "block";
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
-
-  <script>
-  let stok = { Reguler: 10, VIP: 5, VVIP: 2 };
-
-  function showPaymentPopup() {
-    const packageSelected = document.getElementById("package").value;
-    if (!packageSelected) { alert("Silakan pilih package terlebih dahulu!"); return; }
-    if (stok[packageSelected] <= 0) { alert(`Maaf, package ${packageSelected} sudah habis!`); return; }
-
-    let harga = { Reguler: 500000, VIP: 1500000, VVIP: 2500000 };
-    const priceDetail = document.getElementById("priceDetail");
-    const finalPrice = document.getElementById("finalPrice");
-    const kuponInput = document.getElementById("kupon");
-
-    const kuponList = { "EVENT10": 10, "BISAMEDIA20": 20, "VIP30": 30 };
-
-    function updateFinalPrice() {
-      let kode = kuponInput.value.trim().toUpperCase();
-      let diskon = kuponList[kode] || 0;
-      let hargaAkhir = harga[packageSelected] * (1 - diskon / 100);
-      if (diskon > 0) {
-        finalPrice.innerHTML = `<b>Kode diterima!</b> Diskon ${diskon}% <br> Harga Akhir: Rp.${hargaAkhir.toLocaleString()}`;
-        finalPrice.style.color = "#00a859";
-      } else if (kode.length > 0) {
-        finalPrice.innerHTML = `<span style="color:red;">Kode kupon tidak valid</span>`;
-      } else {
-        finalPrice.innerHTML = `<b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}`;
-      }
-    }
-
-    priceDetail.innerHTML = `
-      <b>Package:</b> ${packageSelected} <br>
-      <b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}
-    `;
-    finalPrice.innerHTML = `<b>Harga:</b> Rp.${harga[packageSelected].toLocaleString()}`;
-    kuponInput.value = '';
-    kuponInput.oninput = updateFinalPrice;
-
-    document.getElementById("popupPayment").style.display = "flex";
-    setTimeout(() => document.getElementById("paymentCard").classList.add("show"), 10);
-  }
-
-  function closePaymentPopup() {
-    const card = document.getElementById("paymentCard");
-    card.classList.remove("show");
-    setTimeout(() => document.getElementById("popupPayment").style.display = "none", 300);
-  }
-
-  function sendPayment() {
-    const pic = document.getElementById("pic").value;
-    const contact = document.getElementById("contact").value;
-    const alamat = document.getElementById("alamat").value;
-    const brand = document.getElementById("brand").value;
-    const kategori = document.getElementById("kategori").value;
-    const packageSelected = document.getElementById("package").value;
-    const buktiFile = document.getElementById("buktiPayment").files[0];
-    const logoFile = document.getElementById("UploadLogo").files[0];
-    const kupon = document.getElementById("kupon").value.trim().toUpperCase();
-
-    if (!pic || !contact || !alamat || !brand || !kategori || !packageSelected || !buktiFile || !logoFile) {
-      alert("Mohon lengkapi semua data sebelum mengirim!");
-      return;
-    }
-
-    const kuponList = { "EVENT10": 10, "BISAMEDIA20": 20, "VIP30": 30 };
-    const diskon = kuponList[kupon] || 0;
-    let harga = { Reguler: 500000, VIP: 1500000, VVIP: 2500000 };
-    let hargaAkhir = harga[packageSelected] * (1 - diskon / 100);
-
-    stok[packageSelected] -= 1;
-    document.getElementById(`stok${packageSelected}`).textContent = stok[packageSelected];
-
-    closePaymentPopup();
-
-    // --- Tampilkan logo dan bukti pembayaran berdampingan ---
-    const readerLogo = new FileReader();
-    const readerBukti = new FileReader();
-
-    readerLogo.onload = function (eLogo) {
-      readerBukti.onload = function (eBukti) {
-        const gambarPreview = `
-          <div style="display:flex; justify-content:center; align-items:center; gap:20px; margin-top:10px;">
-            <div style="text-align:center;">
-              <b>Logo Brand:</b><br>
-              <img src="${eLogo.target.result}" alt="Logo Brand" style="width:120px; height:auto; border-radius:8px; border:1px solid #ccc;">
-            </div>
-            <div style="text-align:center;">
-              <b>Bukti Payment:</b><br>
-              <img src="${eBukti.target.result}" alt="Bukti Payment" style="width:120px; height:auto; border-radius:8px; border:1px solid #ccc;">
-            </div>
-          </div>
-        `;
-
-        const dataPreview = `
-          <b>Nama PIC:</b> ${pic}<br>
-          <b>Contact:</b> ${contact}<br>
-          <b>Alamat:</b> ${alamat}<br>
-          <b>Brand:</b> ${brand}<br>
-          <b>Kategori:</b> ${kategori}<br>
-          <b>Package:</b> ${packageSelected}<br>
-          <b>Kode Kupon:</b> ${kupon || "-"}<br>
-          <b>Diskon:</b> ${diskon}%<br>
-          <b>Harga Akhir:</b> Rp.${hargaAkhir.toLocaleString()}<br>
-          ${gambarPreview}
-        `;
-
-        document.getElementById("confirmData").innerHTML = dataPreview;
-        document.getElementById("popupConfirm").style.display = "flex";
-        setTimeout(() => document.getElementById("confirmCard").classList.add("show"), 10);
-      };
-      readerBukti.readAsDataURL(buktiFile);
-    };
-    readerLogo.readAsDataURL(logoFile);
-  }
-
-  function closeConfirmPopup() {
-    const card = document.getElementById("confirmCard");
-    card.classList.remove("show");
-    setTimeout(() => document.getElementById("popupConfirm").style.display = "none", 300);
-  }
-
-  function goBack() {
-    document.getElementById("successPage").style.display = "none";
-    document.getElementById("formPage").style.display = "block";
-  }
-</script>
-
 </body>
 
 </html>
